@@ -38,7 +38,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>DispatcherServlet</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
     <!--end-->
 
@@ -62,30 +62,30 @@
     <!--end-->
 
     <!--不拦截静态资源-->
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.css</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.gif</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.jpg</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.png</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.js</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.html</url-pattern>
-    </servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>default</servlet-name>-->
+        <!--<url-pattern>*.css</url-pattern>-->
+    <!--</servlet-mapping>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>default</servlet-name>-->
+        <!--<url-pattern>*.gif</url-pattern>-->
+    <!--</servlet-mapping>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>default</servlet-name>-->
+        <!--<url-pattern>*.jpg</url-pattern>-->
+    <!--</servlet-mapping>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>default</servlet-name>-->
+        <!--<url-pattern>*.png</url-pattern>-->
+    <!--</servlet-mapping>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>default</servlet-name>-->
+        <!--<url-pattern>*.js</url-pattern>-->
+    <!--</servlet-mapping>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>default</servlet-name>-->
+        <!--<url-pattern>*.html</url-pattern>-->
+    <!--</servlet-mapping>-->
     <welcome-file-list>
         <welcome-file>home.html</welcome-file>
     </welcome-file-list>

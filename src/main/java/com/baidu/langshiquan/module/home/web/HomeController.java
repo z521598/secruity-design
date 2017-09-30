@@ -5,7 +5,6 @@ import com.baidu.langshiquan.module.home.service.HomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by Administrator on 2017/8/4.
@@ -17,8 +16,14 @@ public class HomeController {
     private HomeService homeService;
 
     @RequestMapping({"", "/"})
-    @ResponseBody
     public String home() {
         return "home";
     }
+
+    @RequestMapping("/404")
+    public String info404() {
+        System.out.println(404);
+        return "404";
+    }
+
 }

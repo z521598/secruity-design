@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>登录</title>
+    <title>jsp登录</title>
 </head>
 <body>
 <form name='f' action='/j_spring_security_check' method='POST'>

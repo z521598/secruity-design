@@ -60,5 +60,7 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:3.2.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:3.2.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.freemarker:freemarker:2.3.22" level="project" />
+    <orderEntry type="library" name="Maven: javax.servlet:jstl:1.2" level="project" />
+    <orderEntry type="library" name="Maven: taglibs:standard:1.1.2" level="project" />
   </component>
 </module>

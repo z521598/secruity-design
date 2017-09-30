@@ -4,7 +4,6 @@ package com.baidu.langshiquan.module.home.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.baidu.langshiquan.module.home.service.HomeService;
 
@@ -18,14 +17,13 @@ public class LoginController {
     private HomeService homeService;
 
     @RequestMapping("/login.action")
-    @ResponseBody
     public String home() {
-        return "home";
+        return "login";
     }
 
-    @RequestMapping("/403.action")
-    @ResponseBody
+    @RequestMapping("/403")
     public String info403() {
+        System.out.println(403);
         return "403";
     }
 
