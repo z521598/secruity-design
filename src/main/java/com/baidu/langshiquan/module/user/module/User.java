@@ -13,6 +13,11 @@ public class User {
 
 //    private Date date;
 
+    public User(Long id, String username) {
+        this.id = id;
+        this.username = username;
+    }
+
     public Long getId() {
         return id;
     }
@@ -25,6 +30,9 @@ public class User {
         return username;
     }
 
+    public String getTest() {
+        return "test";
+    }
     public void setUsername(String username) {
         this.username = username;
     }
