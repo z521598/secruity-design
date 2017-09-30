@@ -7,26 +7,28 @@
                         http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
                         http://www.springframework.org/schema/security
                         http://www.springframework.org/schema/security/spring-security.xsd">
-    <!--   use-expressions=”true” 需要使用表达式方式来写权限-->
-    <!--<http pattern="/login.html" security="none"/>-->
-    <http auto-config="true" access-denied-page="/403.action">
+
+    <!--
+        default-target-url:自定义用户登陆登陆成功跳转的page
+        authentication-failure-url:登陆失败跳转的page
+        use-expressions:Spring表达式语言配置访问控制
+    -->
+    <http auto-config="true" access-denied-page="/403.action" use-expressions="false">
         <!--这是spring 提供的http/https信道安全的这个是重要的！你的请求信道是安全的！-->
-        <form-login login-page="../webapp/html/login.html" authentication-failure-url="/views/login.html"
-                    default-target-url="/views/home.html"/>
-        <!--authentication-failure-url="/403.html" default-target-url="/home.html"-->
-        <!--
-        释放用户登陆page 允许任何人访问该页面 ，IS_AUTHENTICATED_ANONYMOUSLY表示不拦截
-        另一种不拦截资源的配置：
-        -->
-
-        <intercept-url pattern="/*.action" access="ROLE_admin"/>
-        <intercept-url pattern="/oneUser/*.action" access="ROLE_user,ROLE_admin"/>
-
-        <!-- 配置用户正常访问page-->
-
-        <!-- 自定义用户登陆page default-target-url登陆成功跳转的page ，authentication-failure-url="/login.jsp?error=true"这里是登陆失败跳转的page-->
-        <!-- 记住密码 -->
-        <!--         <remember-me key="elim" user-service-ref="securityManager"/> -->
+        <form-login login-page="/login.action" authentication-failure-url="/error"
+                    default-target-url="/"/>
+        <!--登录页面不拦截,另一种方式：<http pattern="/login.action" security="none"/> -->
+        <intercept-url pattern="/login.action*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <!--主页不拦截-->
+        <intercept-url pattern="/" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <!-- 404,403,error页面不拦截-->
+        <intercept-url pattern="/403" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <intercept-url pattern="/404" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <intercept-url pattern="/error" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <!--配置权限拦截，访问所有url，都需要用户登录-->
+        <intercept-url pattern="/oneUser/**" access="ROLE_user,ROLE_admin"/>
+        <!--配置权限拦截，访问admin下url，都需要管理员登录-->
+        <intercept-url pattern="/admin/**" access="ROLE_admin"/>
     </http>
 
     <!--用户配置-->

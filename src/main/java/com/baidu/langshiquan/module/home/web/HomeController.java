@@ -28,4 +28,12 @@ public class HomeController {
         return "404";
     }
 
+    @RequestMapping("/error")
+    public String error() {
+        System.out.println("error");
+        return "error";
+    }
+
+
+
 }
