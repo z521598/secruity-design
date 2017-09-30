@@ -23,7 +23,6 @@ public class LoginController {
 
     @RequestMapping("/403")
     public String info403() {
-        System.out.println(403);
         return "403";
     }
 

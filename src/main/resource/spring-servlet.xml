@@ -10,34 +10,40 @@
     <!-- 启用spring mvc 注解 -->
     <context:annotation-config/>
     <mvc:annotation-driven/>
-    <!-- 设置使用注解的类所在的jar包 -->
+    <!-- 设置使用注解的类所在的包 -->
     <context:component-scan base-package="com.baidu.langshiquan"/>
 
-    <!--静态资源-->
+    <!--静态资源:不通过springmvc前端控制器-->
     <mvc:resources location="/html/" mapping="/html/**"/>
     <mvc:resources location="/js/" mapping="/js/**"/>
     <mvc:resources location="/css/" mapping="/css/**"/>
     <mvc:resources location="/png/" mapping="/png/**"/>
 
-
     <!--可以配置多个视图解析器-->
+    <!--
+    当一个视图解析器找不到合适的视图时，它可能返回null值。
+    但是不是每个解析器都这么做,在某些情况下，解析器可能无法侦测出符合要求的视图是否存在。
+    如果InternalResourceViewResolver解析器没有放在链的末端， InternalResourceViewResolver后面的那些解析器根本得不到使用，
+    因为InternalResourceViewResolver总是返回一个视图。
+    -->
     <!--html视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <!--order越大，则优先级越低；默认值为Interger.MAX_VALUE-->
         <property name="prefix" value="/html/"/>
         <property name="suffix" value=".html"/>
         <property name="contentType" value="text/html"/>
     </bean>
 
-    <!--jsp视图解析器：id为viewResolver的viewResolver的优先级是最低的。-->
+    <!--jsp视图解析器：默认情况下（不设置order属性），id为viewResolver的viewResolver的优先级是最低的。-->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--order越大，则优先级越低；默认值为Interger.MAX_VALUE-->
         <property name="order" value="10"/>
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <!--视图的前缀-->
         <property name="prefix" value="/WEB-INF/views/"/>
+        <!--视图的后缀-->
         <property name="suffix" value=".jsp"/>
     </bean>
 
     <!--json视图解析器-->
-
-
+    <!--TODO-->
 </beans>

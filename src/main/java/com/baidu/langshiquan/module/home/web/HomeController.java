@@ -15,8 +15,10 @@ public class HomeController {
     @Autowired
     private HomeService homeService;
 
+    // 可以配置多个映射
     @RequestMapping({"", "/"})
     public String home() {
+        // 会按照视图解析器的设置，寻找/WEB-INF/views/home.jsp文件
         return "home";
     }
 
