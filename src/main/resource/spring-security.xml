@@ -21,6 +21,8 @@
         <intercept-url pattern="/login.action*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
         <!--主页不拦截-->
         <intercept-url pattern="/" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <!--test接口-->
+        <intercept-url pattern="/test/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
         <!-- 404,403,error页面不拦截-->
         <intercept-url pattern="/403" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
         <intercept-url pattern="/404" access="IS_AUTHENTICATED_ANONYMOUSLY"/>

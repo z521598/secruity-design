@@ -22,6 +22,7 @@ public class OneUserController {
     @RequestMapping("/testUser")
     @ResponseBody
     public User testUser() {
+        System.out.println("/testUser work");
         return new User(1l, "lsq");
     }
 }

@@ -6,9 +6,9 @@
     <packaging>war</packaging>
 
 
-    <name>springDesign</name>
+    <name>secruityDesign</name>
     <groupId>spring</groupId>
-    <artifactId>springDesign</artifactId>
+    <artifactId>secruityDesign</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
